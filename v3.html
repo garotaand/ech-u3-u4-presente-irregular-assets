@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Español con Historia · Supervivencia a 10.000 metros</title>
+  <link rel="preconnect" href="https://raw.githubusercontent.com">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@400;600;700;800;900&display=swap');
+:root{--vino:#5a1118;--vino2:#8c2425;--oro:#f2bd57;--cobre:#bd7437;--crema:#fff4df;--papel:#fffaf0;--tinta:#2b1613;--muted:#79554b;--ok:#168b5b;--bad:#b32635;--shadow:0 22px 60px rgba(25,4,6,.28)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--tinta);background:radial-gradient(circle at 20% 0%,#89502f,transparent 32%),linear-gradient(135deg,#260509,#5a1118 55%,#130204);min-height:100vh}button,input{font:inherit}.app-header{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;justify-content:space-between;padding:10px 14px;background:rgba(28,4,7,.78);backdrop-filter:blur(14px);border-bottom:1px solid rgba(242,189,87,.36);color:#fff}.menu-btn{border:1px solid var(--oro);background:#1b0508;color:var(--oro);border-radius:999px;width:42px;height:42px;font-size:22px}.brand{display:flex;gap:10px;align-items:center;min-width:0}.brand img{width:48px;height:48px;object-fit:contain}.brand strong{display:block;font-family:Cinzel,serif;color:#ffe4a4}.brand span{display:block;font-size:12px;color:#edd7b4}.score-pill{background:linear-gradient(#ffe08a,#e8aa35);color:#3a080c;font-weight:900;border-radius:999px;padding:8px 13px;box-shadow:0 4px 0 #9b651e;white-space:nowrap}.mission-nav{position:sticky;top:69px;z-index:25;display:flex;gap:8px;overflow:auto;padding:10px;background:rgba(255,244,223,.92);border-bottom:1px solid #e4cfa8}.nav-item{border:1px solid #d4b782;border-radius:999px;background:#fffaf0;padding:9px 14px;font-weight:900;color:#6d2a21;white-space:nowrap}.nav-item.active{background:var(--vino);color:#fff;border-color:var(--vino)}main{max-width:1180px;margin:0 auto}.screen{display:none;padding:18px;animation:rise .45s ease both}.screen.active{display:block}@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.hero-screen{position:relative;overflow:hidden;min-height:calc(100vh - 120px);padding:22px}.hero-bg{position:absolute;inset:0;background-image:var(--hero-img),linear-gradient(120deg,rgba(33,5,7,.78),rgba(90,17,24,.45));background-size:cover;background-position:center;opacity:.42;filter:saturate(1.05);border-radius:0 0 36px 36px}.hero-content{position:relative;color:#fff;padding:36px 0 24px;max-width:680px}.mission-label{text-transform:uppercase;letter-spacing:.18em;color:var(--oro);font-weight:900;font-size:12px}.hero-content h1,.screen h2{font-family:Cinzel,serif;line-height:1.02;margin:.1em 0 .25em}.hero-content h1{font-size:clamp(42px,8vw,88px);text-shadow:0 5px 30px #000}.lead{font-size:clamp(16px,2.4vw,20px);line-height:1.65;color:#fff1d7}.route{display:flex;align-items:center;gap:12px;color:#ffe0a0;font-weight:900;margin:22px 0}.route i{height:2px;flex:1;max-width:280px;background:linear-gradient(90deg,var(--oro),transparent);position:relative}.route i:after{content:"✈";position:absolute;right:-8px;top:-13px}.primary-btn,.cinema-btn{border:0;border-radius:20px;padding:15px 22px;font-weight:900;cursor:pointer;background:linear-gradient(#ffd978,#e7a72d);color:#38080c;box-shadow:0 7px 0 #9b651e,0 16px 30px rgba(0,0,0,.25);transition:.18s}.primary-btn:active,.cinema-btn:active{transform:translateY(5px);box-shadow:0 2px 0 #9b651e}.mission-grid{position:relative;display:grid;grid-template-columns:1fr;gap:15px}.mission-card{border:2px solid rgba(242,189,87,.55);border-radius:28px;background:linear-gradient(180deg,rgba(255,250,240,.94),rgba(245,220,176,.94));box-shadow:var(--shadow);padding:18px;text-align:left;min-height:190px;cursor:pointer;color:var(--tinta);position:relative;overflow:hidden}.mission-card:before{content:"";position:absolute;inset:0;background:var(--card-img);background-size:cover;background-position:center;opacity:.22}.mission-card>*{position:relative}.mission-card .num{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--vino);color:var(--oro);font-weight:900;font-size:24px;border:2px solid var(--oro)}.mission-card h3{font-family:Cinzel,serif;font-size:23px;margin:14px 0 4px}.mission-card b{display:inline-block;margin-top:16px;padding:8px 14px;border-radius:999px;background:#1d090b;color:#ffe2a0}.mission-card.locked{filter:saturate(.65);opacity:.82}.scene-card,.cockpit-card,.pressure-header{display:flex;justify-content:space-between;align-items:center;gap:14px;background:linear-gradient(135deg,#fff8ea,#f4d8a7);border:1px solid #e5c381;border-radius:30px;padding:20px;box-shadow:var(--shadow);margin-bottom:16px}.scene-card.night,.cockpit-card,.pressure-header{background:linear-gradient(135deg,#2b0609,#6d151b);color:#fff;border-color:rgba(242,189,87,.4)}.scene-card h2,.cockpit-card h2,.pressure-header h2{font-size:clamp(28px,5vw,52px)}.sound-btn{border:1px solid var(--oro);background:#230608;color:var(--oro);border-radius:999px;padding:12px 16px;font-weight:900}.paper-card,.drag-card,.accordion-panel,.quiz-box,.final-text{background:var(--papel);border:1px solid #e2c796;border-radius:26px;padding:20px;box-shadow:0 14px 40px rgba(44,13,8,.18);line-height:1.8}.cloze-line{margin:0 0 12px}.blank{width:128px;max-width:42vw;border:0;border-bottom:3px solid #c79c55;background:#fff8e8;border-radius:10px 10px 0 0;padding:7px 8px;text-align:center;font-weight:900;color:var(--vino)}.blank.correct{background:#e9ffed;border-color:var(--ok);color:var(--ok)}.blank.wrong{background:#ffe8eb;border-color:var(--bad);color:var(--bad);animation:shake .25s}@keyframes shake{50%{transform:translateX(4px)}}.drag-card{margin-top:16px}.drag-pool,.drop-zones{display:grid;grid-template-columns:1fr;gap:12px}.drag-item,.drop-zone{border:2px dashed #d0a664;border-radius:22px;min-height:116px;padding:12px;background:#fff8e8}.drag-item{border-style:solid;cursor:grab;font-weight:900}.drag-item img{width:100%;height:130px;object-fit:cover;border-radius:16px;margin-top:8px}.drop-zone.over{background:#fff0c5}.drop-zone.filled{border-color:var(--ok);background:#ecfff0}.transition-hook{margin:16px 0;padding:16px;border-left:5px solid var(--oro);background:rgba(255,244,223,.96);border-radius:18px;line-height:1.6;font-weight:700}.transition-hook.pressure{border-color:var(--bad)}.accordion{display:grid;gap:12px}.accordion-panel summary{cursor:pointer;font-weight:900;color:var(--vino);font-size:20px}.exercise-row{margin:12px 0;padding:12px;background:#fff8e8;border-radius:16px}.pressure-screen{max-width:780px}.timer-wrap{height:10px;background:rgba(255,255,255,.22);border-radius:999px;overflow:hidden;min-width:140px;flex:1}#timerBar{height:100%;width:100%;background:linear-gradient(90deg,#ffe28f,#e75048);transition:width 1s linear}.quiz-option{display:block;width:100%;text-align:left;margin:10px 0;border:2px solid #e0bf84;border-radius:18px;background:#fffaf0;padding:14px 16px;font-weight:900;cursor:pointer}.quiz-option.correct{background:#e9ffed;border-color:var(--ok);color:var(--ok)}.quiz-option.wrong{background:#ffe8eb;border-color:var(--bad);color:var(--bad)}.sim-blocks{display:grid;gap:14px}.sim-block{background:linear-gradient(180deg,#fffaf0,#f6dfb8);border:1px solid #e4c184;border-radius:28px;padding:18px;box-shadow:var(--shadow)}.sim-block h3{font-family:Cinzel,serif;color:var(--vino)}.hidden{display:none}.transition-layer{position:fixed;inset:0;z-index:200;display:none;background:#080102;color:#fff;align-items:center;justify-content:center;text-align:center;overflow:hidden}.transition-layer.show{display:flex}.transition-layer video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.64}.transition-layer:after{content:"";position:absolute;inset:0;background:radial-gradient(circle,rgba(0,0,0,.08),rgba(0,0,0,.75))}.transition-copy{position:relative;z-index:2;max-width:760px;padding:24px}.transition-copy h2{font-family:Cinzel,serif;font-size:clamp(30px,6vw,68px)}.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,110px);z-index:300;background:#260609;color:#ffe2a0;border:1px solid var(--oro);padding:13px 20px;border-radius:999px;font-weight:900;box-shadow:var(--shadow);transition:.35s}.toast.show{transform:translate(-50%,0)}.confetti{position:fixed;inset:0;pointer-events:none;z-index:250}@media(min-width:760px){.mission-grid{grid-template-columns:repeat(4,1fr)}.drag-pool,.drop-zones{grid-template-columns:repeat(2,1fr)}.sim-blocks{grid-template-columns:repeat(2,1fr)}.mission-card{min-height:310px}.screen{padding:28px}.mission-nav{justify-content:center}}@media(max-width:620px){.brand img{width:40px;height:40px}.scene-card,.cockpit-card,.pressure-header{display:block}.hero-screen{padding:14px}.paper-card,.drag-card{padding:15px}.screen{padding:12px}.app-header{gap:8px}.brand span{display:none}.score-pill{padding:7px 10px}.mission-nav{top:61px}}
+  </style>
+</head>
+<body>
+  <div id="transitionLayer" class="transition-layer" aria-hidden="true">
+    <video id="transitionVideo" playsinline muted></video>
+    <div class="transition-copy">
+      <p class="eyebrow">Español con Historia</p>
+      <h2 id="transitionTitle">El avión sigue cruzando el Atlántico...</h2>
+      <p id="transitionText">Respira. La próxima misión está por comenzar.</p>
+      <button id="transitionBtn" class="cinema-btn">Continuar</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <canvas id="confettiCanvas" class="confetti"></canvas>
+
+  <header class="app-header">
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir misiones">☰</button>
+    <div class="brand">
+      <img id="logoImg" alt="Español con Historia" />
+      <div>
+        <strong>Módulo 3 y 4</strong>
+        <span>Supervivencia a 10.000 metros</span>
+      </div>
+    </div>
+    <div class="score-pill"><span id="score">0</span> pts</div>
+  </header>
+
+  <nav id="missionNav" class="mission-nav" aria-label="Mapa de misiones">
+    <button data-screen="home" class="nav-item active">Mapa</button>
+    <button data-screen="diario" class="nav-item">Diario</button>
+    <button data-screen="repetidor" class="nav-item">Repetidor</button>
+    <button data-screen="quiz" class="nav-item">Azafata</button>
+    <button data-screen="simulador" class="nav-item">Simulador</button>
+  </nav>
+
+  <main>
+    <section id="home" class="screen active hero-screen">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <p class="mission-label">Misión narrativa</p>
+        <h1>Supervivencia<br>a 10.000 metros</h1>
+        <p class="lead">Laura está atrapada en la fila 24B. El menú parece una trampa, la vergüenza despega y la única forma de aterrizar en Madrid es conjugar bajo presión.</p>
+        <div class="route">
+          <span>São Paulo</span><i></i><span>Madrid</span>
+        </div>
+        <button class="primary-btn" data-start="diario">Iniciar misión</button>
+      </div>
+
+      <div class="mission-grid">
+        <button class="mission-card completed" data-open="diario">
+          <span class="num">1</span><h3>El diario de abordo</h3><p>Texto cloze + imágenes</p><b>Modo íntimo</b>
+        </button>
+        <button class="mission-card" data-open="repetidor">
+          <span class="num">2</span><h3>Repetidor mecánico</h3><p>Automatización mental</p><b>En progreso</b>
+        </button>
+        <button class="mission-card locked" data-open="quiz">
+          <span class="num">3</span><h3>Quiz de la azafata</h3><p>15 segundos por pregunta</p><b>Presión</b>
+        </button>
+        <button class="mission-card locked" data-open="simulador">
+          <span class="num">4</span><h3>Simulador de vuelo</h3><p>4 bloques finales</p><b>Experto</b>
+        </button>
+      </div>
+    </section>
+
+    <section id="diario" class="screen editorial">
+      <div class="scene-card">
+        <div>
+          <p class="mission-label">Modo íntimo / editorial</p>
+          <h2>El diario de abordo de Laura</h2>
+          <p>Completa los huecos. No estás llenando una tabla: estás ayudando a Laura a respirar dentro del avión.</p>
+        </div>
+        <button class="sound-btn" data-sound="cabin">▶ ambiente</button>
+      </div>
+      <article id="clozeExercise" class="paper-card"></article>
+      <div class="drag-card">
+        <h3>Arrastra la imagen al momento correcto</h3>
+        <div id="dragPool" class="drag-pool"></div>
+        <div id="dropZones" class="drop-zones"></div>
+      </div>
+      <button class="primary-btn" data-check="diario">Verificar diario</button>
+      <div class="transition-hook">El avión sigue cruzando el Atlántico en la oscuridad. El error del “cuepito” y el dilema del “repollo” se repiten en bucle dentro de la cabeza de Laura.</div>
+    </section>
+
+    <section id="repetidor" class="screen editorial">
+      <div class="scene-card night">
+        <div>
+          <p class="mission-label">Modo foco mental</p>
+          <h2>El Repetidor Mecánico</h2>
+          <p>El pánico hace que Laura repita las mismas dudas. Abre cada bloque y entrena la estructura hasta que salga sola.</p>
+        </div>
+      </div>
+      <div id="accordionExercise" class="accordion"></div>
+      <button class="primary-btn" data-check="repetidor">Calmar la mente</button>
+      <div class="transition-hook pressure">¡Atención! Pasillos estrechos, reflejos rápidos. La azafata regresa con el carrito a toda velocidad.</div>
+    </section>
+
+    <section id="quiz" class="screen pressure-screen">
+      <div class="pressure-header">
+        <p class="mission-label">Modo zona de presión</p>
+        <h2>Quiz de la Azafata</h2>
+        <div class="timer-wrap"><div id="timerBar"></div></div>
+        <p><span id="timer">15</span>s · La fila avanza</p>
+      </div>
+      <div id="quizBox" class="quiz-box"></div>
+    </section>
+
+    <section id="simulador" class="screen simulator">
+      <div class="cockpit-card">
+        <p class="mission-label">Sistema avanzado</p>
+        <h2>Simulador de vuelo de Laura</h2>
+        <p>20 frases cruciales divididas por cuadrantes de estrés narrativo.</p>
+      </div>
+      <div id="simBlocks" class="sim-blocks"></div>
+      <button class="primary-btn" data-check="simulador">Preparar descenso</button>
+      <div id="finalText" class="final-text hidden">
+        <h2>El avión empieza a descender lentamente sobre Madrid...</h2>
+        <p>Laura mira las luces de la ciudad por la ventana. Dentro de pocos minutos tendrá que enfrentarse sola a las preguntas de inmigración.</p>
+        <button class="primary-btn">Cruzar el Control de Inmigración (Módulo 5)</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+const REPO="https://raw.githubusercontent.com/garotaand/ech-u3-u4-presente-irregular-assets/main/";
+const exts={img:[".png",".jpg",".jpeg",".webp"],audio:[".mp3",".wav",".ogg"],video:[".mp4",".webm",".mov"]};
+const state=JSON.parse(localStorage.getItem("ech-flight-state")||'{"score":0,"done":{}}');
+let currentQuiz=0, quizTimer=null, timeLeft=15;
+
+const data={
+ cloze:[
+  ["El corazón de Laura ","empezar","empieza"," a latir muy fuerte porque es su primer viaje internacional."],
+  ["Ella no ","entender","entiende"," casi nada de español todavía, pero aun así decide viajar."],
+  ["Dentro del avión, Laura mira por la ventana y ","pensar","piensa"," en Martín todo el tiempo."],
+  ["Laura se pone nerviosa porque no ","entender","entiende"," bien la pregunta."],
+  ["Entonces la azafata le ","traer","trae"," agua."],
+  ["La azafata no la ","entender","entiende","."],
+  ["Laura ","sentir","siente"," muchísima vergüenza."],
+  ["Ella ","recordar","recuerda"," que “vaso” no significa objeto para plantas."],
+  ["Laura ","pensar","piensa"," que “pollo” significa “repollo”."],
+  ["Como no ","querer","quiere"," tener gases durante el vuelo."],
+  ["Ella ","pedir","pide"," pasta."],
+  ["La azafata le ","traer","trae"," un enorme plato de macarrones."],
+  ["Después el miedo ","volver","vuelve","."],
+  ["¿Y si nadie me ","entender","entiende"," en España?"],
+  ["Entonces ella ","cerrar","cierra"," los ojos."],
+  ["Y ","soñar","sueña"," con abrazar a Martín en Madrid."]
+ ],
+ drag:[
+  {id:"menu",label:"Menú: Pollo vs. Pasta",img:"img-menu-pollo-pasta",zone:"Laura confunde pollo con repollo."},
+  {id:"sleep",label:"Laura durmiendo en el asiento",img:"img-laura-durmiendo-avion",zone:"Laura cierra los ojos y sueña con Madrid."}
+ ],
+ accordion:[
+  {title:"ENTENDER",rows:[["Laura no","entiende","a los españoles."],["Yo no","entiendo","por qué el pollo vuela y no es una verdura."],["Nosotros no","entendemos","las instrucciones de seguridad."]]},
+  {title:"PEDIR",rows:[["Si tengo sed, yo","pido","agua."],["Los pasajeros de primera clase","piden","champán."],["Laura","pide","pasta para evitar el repollo."]]},
+  {title:"VOLVER",rows:[["El miedo","vuelve","cada vez que hay turbulencia."],["Mis pensamientos siempre","vuelven","a Martín."],["Tú","vuelves","a Brasil si la aduana te rechaza."]]},
+  {title:"COMBINADOS",rows:[["Laura","sigue","nerviosa en su asiento."],["Ella","ve","las nubes por la ventana."],["Laura","sonríe","para no llorar."]]}
+ ],
+ quiz:[
+  {q:"Laura tiene hambre y la azafata le pregunta qué comer. Laura...",a:"pide pasta.",opts:["pides pasta","pide pasta.","piede pasta.","pede pasta"]},
+  {q:"Si yo no ______ las preguntas, estoy perdida.",a:"entiendo",opts:["entiendo","entendo","eintiendo","entiendes"]},
+  {q:"Ella le ______ un vaso de agua a Laura.",a:"trae",opts:["traiga","traes","traze","trae"]},
+  {q:"Con turbulencia, Laura ______ los ojos muy fuerte.",a:"cierra",opts:["cerra","cierra","cierras"]},
+  {q:"Disculpe, ¿usted ______ dormir?",a:"puede",opts:["puedes","puede","podes"]}
+ ],
+ sim:[
+  {title:"🚨 Control de Pánico",rows:[["Yo siempre","pienso","en el peor escenario."],["El vuelo a Madrid","empieza","ahora mismo."],["Laura no","entiende","por qué los aviones se mueven."],["Nosotros","queremos","llegar sanos y salvos."],["Los pasajeros","cierran","las ventanas."]]},
+  {title:"🍽️ Supervivencia al Menú",rows:[["Si tú","pides","pollo, te traen un ave."],["Laura","sigue","con hambre."],["Las azafatas","sirven","la cena."],["Yo siempre","pido","agua mineral."],["Laura","sonríe","para disimular."]]},
+  {title:"💤 El Insomnio de la Fila 24",rows:[["Yo nunca","duermo","bien en vuelos nocturnos."],["Laura","recuerda","los ladridos de Caramelo."],["Tú","sueñas","con Martín."],["Los pasajeros no","pueden","estirar las piernas."],["Las dudas","vuelven","a la cabeza de Laura."]]},
+  {title:"🥋 Hacerse Escuchar",rows:[["Azafata, ¿me","trae","agua?"],["Este viaje","vale","la pena."],["Yo","salgo","de mi zona de confort."],["Mis padres me","dicen","que soy valiente."],["Laura se","pone","los auriculares."]]}
+ ]
+};
+
+function save(){localStorage.setItem("ech-flight-state",JSON.stringify(state))}
+function normalize(v){return (v||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[¿?¡!.,]/g,"").trim().replace(/\s+/g," ")}
+function asset(name,type){return REPO+name+exts[type][0]}
+function tryAsset(el,name,type,prop="src"){let i=0;const list=exts[type];function next(){if(i>=list.length)return;el[prop]=REPO+name+list[i++]} el.onerror=next;next()}
+function setBgVar(name){document.documentElement.style.setProperty("--hero-img",`url("${REPO}${name}.jpg")`)}
+function score(n,msg){state.score+=n;document.getElementById("score").textContent=state.score;save();toast(msg||`+${n} pts`)}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1800)}
+
+function show(id, trans=0){
+ document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+ document.querySelectorAll(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.screen===id));
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(id==="quiz") startQuiz();
+}
+function transition(to,n,title,text){
+ const layer=document.getElementById("transitionLayer"), v=document.getElementById("transitionVideo");
+ tryAsset(v,`transicion-${n}-video`,"video");
+ document.getElementById("transitionTitle").textContent=title;
+ document.getElementById("transitionText").textContent=text;
+ const btn=document.getElementById("transitionBtn");
+ tryAsset(btn,`btn-transicion-${n}`,"img","style.backgroundImage");
+ layer.classList.add("show"); v.play().catch(()=>{});
+ btn.onclick=()=>{layer.classList.remove("show");v.pause();show(to);};
+}
+
+function renderCloze(){
+ const box=document.getElementById("clozeExercise");
+ box.innerHTML=data.cloze.map((r,i)=>`<p class="cloze-line">${r[0]}<input class="blank" data-answer="${r[2]}" aria-label="${r[1]} ${i+1}" placeholder="${r[1]}">${r[3]}</p>`).join("");
+ const pool=document.getElementById("dragPool"), zones=document.getElementById("dropZones");
+ pool.innerHTML=data.drag.map(d=>`<div draggable="true" class="drag-item" data-id="${d.id}">${d.label}<img data-img="${d.img}" alt=""></div>`).join("");
+ zones.innerHTML=data.drag.map(d=>`<div class="drop-zone" data-accept="${d.id}">${d.zone}</div>`).join("");
+ document.querySelectorAll("[data-img]").forEach(img=>tryAsset(img,img.dataset.img,"img"));
+ document.querySelectorAll(".drag-item").forEach(el=>el.addEventListener("dragstart",e=>e.dataTransfer.setData("text/plain",el.dataset.id)));
+ document.querySelectorAll(".drop-zone").forEach(z=>{
+  z.addEventListener("dragover",e=>{e.preventDefault();z.classList.add("over")});
+  z.addEventListener("dragleave",()=>z.classList.remove("over"));
+  z.addEventListener("drop",e=>{e.preventDefault();z.classList.remove("over");const id=e.dataTransfer.getData("text/plain");const item=document.querySelector(`.drag-item[data-id="${id}"]`);if(id===z.dataset.accept){z.appendChild(item);z.classList.add("filled");score(5,"Imagen conectada ✨")}else toast("Casi... busca el momento narrativo correcto.")});
+ });
+}
+function renderAccordion(){
+ document.getElementById("accordionExercise").innerHTML=data.accordion.map((g,gi)=>`<details class="accordion-panel" open><summary>${g.title}</summary>${g.rows.map((r,i)=>`<div class="exercise-row">${r[0]} <input class="blank" data-answer="${r[1]}" placeholder="verbo"> ${r[2]}</div>`).join("")}</details>`).join("");
+}
+function renderSim(){
+ document.getElementById("simBlocks").innerHTML=data.sim.map(b=>`<div class="sim-block"><h3>${b.title}</h3>${b.rows.map(r=>`<div class="exercise-row">${r[0]} <input class="blank" data-answer="${r[1]}" placeholder="verbo"> ${r[2]}</div>`).join("")}</div>`).join("");
+}
+function checkScope(scope){
+ const root=document.getElementById(scope);
+ let ok=0,total=0;
+ root.querySelectorAll(".blank").forEach(inp=>{total++;const good=normalize(inp.value)===normalize(inp.dataset.answer);inp.classList.toggle("correct",good);inp.classList.toggle("wrong",!good);if(good)ok++});
+ if(ok===total){score(scope==="simulador"?80:45,"Misión completada ✨");confetti();state.done[scope]=true;save();
+  if(scope==="diario") transition("repetidor",1,"El avión sigue cruzando el Atlántico...","El pánico se repite en bucle. Laura necesita automatizar las estructuras.");
+  if(scope==="repetidor") transition("quiz",2,"El carrito aparece en el pasillo","Tienes 15 segundos por pregunta. La fila 24B depende de ti.");
+  if(scope==="simulador"){document.getElementById("finalText").classList.remove("hidden");transition("simulador",6,"Madrid aparece bajo las nubes","El descenso comienza. La próxima puerta es inmigración.");}
+ } else toast(`${ok}/${total} correctas. Revisa con calma.`);
+}
+function startQuiz(){clearInterval(quizTimer);currentQuiz=0;renderQuiz()}
+function renderQuiz(){
+ const q=data.quiz[currentQuiz], box=document.getElementById("quizBox");
+ if(!q){score(60,"Quiz sobrevivido 🛫");confetti();transition("simulador",3,"Has sobrevivido al servicio a bordo","Ahora entra al sistema avanzado de simulación.");return}
+ timeLeft=15; document.getElementById("timer").textContent=timeLeft;document.getElementById("timerBar").style.width="100%";
+ box.innerHTML=`<h3>${currentQuiz+1}. ${q.q}</h3>${q.opts.map(o=>`<button class="quiz-option">${o}</button>`).join("")}`;
+ box.querySelectorAll(".quiz-option").forEach(btn=>btn.onclick=()=>answerQuiz(btn,q.a));
+ clearInterval(quizTimer); quizTimer=setInterval(()=>{timeLeft--;document.getElementById("timer").textContent=timeLeft;document.getElementById("timerBar").style.width=(timeLeft/15*100)+"%";if(timeLeft<=0){clearInterval(quizTimer);currentQuiz++;renderQuiz()}},1000);
+}
+function answerQuiz(btn,ans){clearInterval(quizTimer);const good=normalize(btn.textContent)===normalize(ans);btn.classList.add(good?"correct":"wrong");if(good)score(12,"Respuesta instantánea ✨");else toast("El flujo continúa. Respira.");setTimeout(()=>{currentQuiz++;renderQuiz()},900)}
+function confetti(){const c=document.getElementById("confettiCanvas"),ctx=c.getContext("2d");c.width=innerWidth;c.height=innerHeight;let p=Array.from({length:80},()=>({x:Math.random()*c.width,y:-20-Math.random()*200,r:3+Math.random()*5,v:2+Math.random()*4,a:Math.random()*6}));let f=0;(function draw(){ctx.clearRect(0,0,c.width,c.height);p.forEach(o=>{o.y+=o.v;o.x+=Math.sin(o.a+f/10)*2;ctx.fillRect(o.x,o.y,o.r,o.r)});if(f++<120)requestAnimationFrame(draw);else ctx.clearRect(0,0,c.width,c.height)})()}
+
+document.addEventListener("click",e=>{
+ const nav=e.target.closest("[data-screen]"); if(nav) show(nav.dataset.screen);
+ const open=e.target.closest("[data-open]"); if(open) show(open.dataset.open);
+ const start=e.target.closest("[data-start]"); if(start) show(start.dataset.start);
+ const check=e.target.closest("[data-check]"); if(check) checkScope(check.dataset.check);
+ if(e.target.id==="menuBtn") document.getElementById("missionNav").scrollIntoView({behavior:"smooth"});
+});
+document.querySelectorAll("[data-sound]").forEach(btn=>btn.onclick=()=>toast("Ambiente de cabine pronto para conectar ao asset audio-cabin."));
+tryAsset(document.getElementById("logoImg"),"logo-espanol-con-historia","img");
+setBgVar("img-avion-cabina-noche");
+renderCloze();renderAccordion();renderSim();document.getElementById("score").textContent=state.score;
+  </script>
+</body>
+</html>
